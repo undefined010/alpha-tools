@@ -34,7 +34,7 @@ def main():
         'LIST',
         'EXIT',
         'SCAN',
-        'ENCRYPT',
+        'ENCRYPT'
     ]
 
     user = ''
@@ -46,12 +46,12 @@ def main():
             for i in cmd:
                 if user == cmd[0]:
                     print(f.GREEN + f'\t*{i}')
-                if user == cmd[2]:
+                elif user == cmd[2]:
                     scan()
                     break
-                if user == cmd[3]:
+                elif user == cmd[3]:
                     pass
-                if user != cmd[1] and user != '':
+                elif user != i and user != cmd[1] and user != '':
                     print('error')
                     break
 
