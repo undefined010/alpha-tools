@@ -10,7 +10,7 @@ class Scan:
 
     def __init__(self) -> None:
         os.system('clear')
-        print(f.RED + ff("Port Scanner"))
+        print(f.RED + ff("Port Scanner 0.1"))
 
         self.ipv4 = input(f.RED + "Enter a valid ip / hostname to scan: ")
         self.open_ports = []
