@@ -60,7 +60,7 @@ def main():
                     break
                 elif user == cmd[3]:
                     encrypt()
-                    pass
+                    break
                 elif user != i and user != cmd[1] and user != '':
                     print('error')
                     break

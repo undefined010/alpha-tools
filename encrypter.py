@@ -10,7 +10,7 @@ class Encrypt:
 
     
 
-    def __init__(self,string) -> None:
+    def __init__(self) -> None:
         print(f.YELLOW + ff("Encrypter 0.1"))
 
         self.key =  Fernet.generate_key()
