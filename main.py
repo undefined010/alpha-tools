@@ -36,7 +36,7 @@ def encrypt():
 
 
 def main():
-    print(f.YELLOW + ff('Helper 0.2'))
+    print(f.YELLOW + ff('Helper'))
     print(f.YELLOW + 'type list to see the availble commands')
 
     cmd = [
