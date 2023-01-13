@@ -1,5 +1,4 @@
-from scanner import Scan,f,ff
-from encrypter import Encrypt
+from scanner import Scan,f,ff,os
 
 def scan():
     s = Scan()
@@ -25,15 +24,8 @@ def scan():
     except ValueError:
         print(ValueError)
 
-def encrypt():
-    e = Encrypt()
-    user_input = str(input(f.YELLOW + 'enter a file in the dir to encrypt it : '))
-    e.encrypt_file(user_input)
-
-    
-
-    
-
+    user = input(f.RED + 'press any key to exit...')
+    os.system('clear')
 
 def main():
     print(f.YELLOW + ff('Helper'))
@@ -42,8 +34,7 @@ def main():
     cmd = [
         'LIST',
         'EXIT',
-        'SCAN',
-        'ENCRYPT'
+        'SCAN'
     ]
 
     user = ''
@@ -58,10 +49,7 @@ def main():
                 elif user == cmd[2]:
                     scan()
                     break
-                elif user == cmd[3]:
-                    encrypt()
-                    break
-                elif user != i and user != cmd[1] and user != '':
+                elif user != i and user != cmd[1] and user != '' and user.isspace() == False:
                     print('error')
                     break
 
