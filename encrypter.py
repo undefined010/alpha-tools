@@ -10,31 +10,38 @@ class Encrypt:
 
     
 
-    def __init__(self) -> None:
+    def __init__(self,string) -> None:
         print(f.YELLOW + ff("Encrypter 0.1"))
+
         self.key =  Fernet.generate_key()
         self.cipher_suite = Fernet(self.key)
-    
-    def encrypt_string(self,string) -> str:
+
+    def encrypt_string(self,string) -> bytes:
         return self.cipher_suite.encrypt(string)
 
-    def decrypt_string(self,string) -> str:
+    def decrypt_string(self,string) -> bytes:
         return self.cipher_suite.decrypt(string)
 
+    def encrypt_file(self , fname):
+        fun = lambda a ,b  : a == b
+        cheak = [fun(fname,i) for i in os.listdir() if fun(fname,i)]
+        f = []
 
+
+        if len(cheak) == 0:
+            print(f.RED + "File not found")
+
+        with open(fname,'rb') as read_file:
+            f = read_file.readlines()
+            read_file.close()
+            
+        encrypt_f = [self.encrypt_string(i) for i in f]
+
+        with open(fname , 'wb') as write_file:
+            write_file.writelines(encrypt_f)
+            write_file.close()
         
 
-    """
-    def ecrypt_file(self,fname) -> None:
-        dlist = os.listdir()
-        is_found = False
-
-        for __file__ in dlist:
-            if __file__ == fname:
-                is_found == True
-        
-        if not is_found:
-            print(f.RED + "file not found")
-
-        #continue later
-    """
+    
+    
+    

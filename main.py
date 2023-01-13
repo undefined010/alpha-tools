@@ -1,4 +1,5 @@
 from scanner import Scan,f,ff
+from encrypter import Encrypt
 
 def scan():
     s = Scan()
@@ -23,6 +24,11 @@ def scan():
 
     except ValueError:
         print(ValueError)
+
+def encrypt():
+    pass
+    
+
     
 
 
@@ -62,4 +68,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    #main()
+    string = b"ajmad"
+    e = Encrypt(string)
+    e.encrypt_file("README.md")
