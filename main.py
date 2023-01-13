@@ -26,7 +26,10 @@ def scan():
         print(ValueError)
 
 def encrypt():
-    pass
+    e = Encrypt()
+    user_input = str(input(f.YELLOW + 'enter a file in the dir to encrypt it : '))
+    e.encrypt_file(user_input)
+
     
 
     
@@ -56,6 +59,7 @@ def main():
                     scan()
                     break
                 elif user == cmd[3]:
+                    encrypt()
                     pass
                 elif user != i and user != cmd[1] and user != '':
                     print('error')
@@ -68,7 +72,4 @@ def main():
 
 
 if __name__ == '__main__':
-    #main()
-    string = b"ajmad"
-    e = Encrypt(string)
-    e.encrypt_file("README.md")
+    main()
