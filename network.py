@@ -6,10 +6,6 @@ from pyfiglet import figlet_format as ff
 
 colorama.init(autoreset=True)
 
-"""
-self note :- you can use port scan along with ddos to find a port to attack
-"""
-
 class Scan:
     
     def __init__(self) -> None:
