@@ -51,8 +51,8 @@ class Scan:
     def get_open_ports(self) -> list:
         return self.open_ports
     
-    def save(self,file_name = '') -> None:
-        with open(file_name,'w') as wf:
+    def save(self,file_name = 'demo') -> None:
+        with open(f'{file_name}.txt','w') as wf:
             wf.write(str(self.get_open_ports()))
 
 
